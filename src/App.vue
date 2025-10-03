@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import {ref} from 'vue'
 import ToDoItem from './components/ToDoItem.vue'
-const tasks = ref<string[]>([
-  'task1',
-  'task2',
-  'task3',
+const tasks = ref<{name: string, completed: boolean } []>([
+  {name: 'task1', completed: false},
+  {name: 'task2', completed: false},
+  {name:'task3', completed: false}
 ])
 
 const inputValue = ref<string>('')
@@ -13,9 +13,15 @@ const onCLick = () => {
   if (inputValue.value === ''){
     return
   }
-  tasks.value.push(inputValue.value)
+  tasks.value.push({name: inputValue.value, completed:false})
   inputValue.value = ''
   }
+
+const onChangeStatus = (value:{name:string, completed: boolean}) =>
+{
+  const idx = tasks.value.findIndex(t => t.name === value.name)
+  tasks.value[idx].completed = value.completed
+}
 </script>
 
 <template>
@@ -26,8 +32,9 @@ const onCLick = () => {
   <ul>
     <ToDoItem
       v-for = "task in tasks"
-      :key = "task"
+      :key = "task.name"
       :task= "task"
+      @change-status="onChangeStatus"
       ></ToDoItem>
   </ul>
 

@@ -2,21 +2,21 @@
 import MyTable from '@/components/MyTable.vue'
 
 const columns = [
-  { key: 'product', label: 'Товар' },
-  { key: 'price', label: 'Цена (₽)' },
-  { key: 'stock', label: 'На складе' }
+  { key: 'category', label: 'Категория' },
+  { key: 'awardDate', label: 'Дата вручения' },
+  { key: 'grantAmount', label: 'Стоимость гранта' }
 ]
 
 const data = [
-  { product: 'Ноутбук', price: 85000, stock: 12 },
-  { product: 'Мышь', price: 1500, stock: 200 },
-  { product: 'Клавиатура', price: 4000, stock: 80 }
+  { category: 'Физика', awardDate: '10 декабря', grantAmount: '1 млн. $ США' },
+  { category: 'Химия', awardDate: '10 декабря', grantAmount: '1 млн. $ США' },
+  { category: 'Литература', awardDate: '10 декабря', grantAmount: '1 млн. $ США' }
 ]
 </script>
 
 <template>
   <div>
-    <h2>Страница 2: Склад</h2>
+    <h1>Список нобелевских премий</h1>
     <MyTable :data="data" :columns="columns" />
   </div>
 </template>

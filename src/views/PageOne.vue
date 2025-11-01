@@ -2,21 +2,21 @@
 import MyTable from '@/components/MyTable.vue'
 
 const columns = [
-  { key: 'id', label: 'ID' },
   { key: 'name', label: 'Имя' },
-  { key: 'role', label: 'Роль' }
+  { key: 'birthDate', label: 'Дата рождения' },
+  { key: 'prizes', label: 'Число премий' }
 ]
 
 const data = [
-  { id: 1, name: 'Анна', role: 'Разработчик' },
-  { id: 2, name: 'Борис', role: 'Дизайнер' },
-  { id: 3, name: 'Вера', role: 'Тестировщик' }
+  { name: 'Вильгельм Конрад Рентген', birthDate: '27 марта 1845', prizes: 'Одна (Физика)' },
+  { name: 'Хидэки Юкава', birthDate: '23 января 1907', prizes: 'Одна (Физика)' },
+  { name: 'Феликс Блох', birthDate: '23 октября 1905', prizes: 'Одна (Физика)' }
 ]
 </script>
 
 <template>
   <div>
-    <h2>Страница 1: Команда разработки</h2>
+    <h1>Список нобелевских лауреатов</h1>
     <MyTable :data="data" :columns="columns" />
   </div>
 </template>

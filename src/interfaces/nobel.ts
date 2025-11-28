@@ -17,3 +17,23 @@ export interface NobelResponse {
     total: number
   }
 }
+
+export interface NobelPrize {
+  awardYear: string
+  category: {
+    en: string
+    no: string
+    se: string
+  }
+  prizeAmount: number
+  dateAwarded: string // в формате "YYYY-MM-DD"
+}
+
+export interface NobelPrizesResponse {
+  nobelPrizes: NobelPrize[]
+  meta: {
+    total: number
+    offset: number
+    limit: number
+  }
+}

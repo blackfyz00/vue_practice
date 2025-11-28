@@ -50,8 +50,6 @@ const fetchData = async () => {
   }
 }
 
-// После всех ref и fetchData
-
 let debounceTimer: ReturnType<typeof setTimeout> | null = null
 
 watch([currentPage, searchName, searchYear], () => {
